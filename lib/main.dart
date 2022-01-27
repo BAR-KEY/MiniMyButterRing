@@ -1,32 +1,43 @@
 import 'package:flutter/material.dart';
+import 'style.dart' as style;
+import './pages/sidemenu.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(theme: style.theme, home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  var color = Color(0xFFFDEDCC);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-          // color:Colors.black;
+    return Scaffold(
+      drawer: SideMenu(),
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: style.subColor),
+        title: Text('MiniMyButterRing'),
+        centerTitle: true,
+        actions: const [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: null,
           ),
-      home: Scaffold(
-        appBar: AppBar(
-            title: Text('MiniMyButterRing'),
-            centerTitle: true,
-            leading: IconButton(icon: Icon(Icons.menu), onPressed: null),
-            actions: const [
-              IconButton(icon: Icon(Icons.image), onPressed: null),
-              IconButton(icon: Icon(Icons.navigate_next), onPressed: null),
-            ],
-            backgroundColor: color),
-        body: Text('text'),
-        bottomNavigationBar: Text('bottomNavigationBar'),
+          IconButton(icon: Icon(Icons.search), onPressed: null),
+        ],
       ),
+      body: Text('text'),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.message),
+      ),
+      bottomNavigationBar: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: const [
+            IconButton(
+                icon: Icon(Icons.shopping_cart_outlined), onPressed: null),
+            IconButton(
+                icon: Icon(Icons.delivery_dining_sharp), onPressed: null),
+          ]),
     );
   }
 }
