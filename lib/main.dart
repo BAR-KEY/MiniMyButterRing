@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'style.dart' as style;
 import './pages/sidemenu.dart';
+import './pages/imageslider.dart';
 
 void main() {
   runApp(MaterialApp(theme: style.theme, home: MyApp()));
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           IconButton(icon: Icon(Icons.search), onPressed: null),
         ],
       ),
-      body: Text('text'),
+      body: ImageSlide(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.message),
