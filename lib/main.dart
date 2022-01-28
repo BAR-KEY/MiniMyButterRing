@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
-import 'style.dart' as style;
+import './pages/style.dart' as style;
 import './pages/sidemenu.dart';
 import './pages/imageslider.dart';
+import './pages/shop.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MaterialApp(theme: style.theme, home: MyApp()));
 }
 
@@ -26,7 +33,9 @@ class MyApp extends StatelessWidget {
           IconButton(icon: Icon(Icons.search), onPressed: null),
         ],
       ),
-      body: ImageSlide(),
+      body:
+          // ImageSlider(),
+          Shop(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.message),
