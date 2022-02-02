@@ -14,9 +14,14 @@ void main() async {
   runApp(MaterialApp(theme: style.theme, home: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   MyApp({Key? key}) : super(key: key);
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +38,12 @@ class MyApp extends StatelessWidget {
           IconButton(icon: Icon(Icons.search), onPressed: null),
         ],
       ),
-      body:
-          // ImageSlider(),
-          Shop(),
+      body: Column(
+        children: [
+          Expanded(child: ImageSlider()),
+          Expanded(child: Shop()),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.message),
