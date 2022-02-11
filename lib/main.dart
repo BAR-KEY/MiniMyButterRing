@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './pages/style.dart' as style;
+import 'package:minimybutterring/pages/palette.dart';
 import './pages/sidemenu.dart';
 import './pages/imageslider.dart';
 import './pages/shop.dart';
@@ -11,11 +12,11 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MaterialApp(theme: style.theme, home: MyApp()));
+  runApp(MaterialApp(theme: style.theme, home: const MyApp()));
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -25,10 +26,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideMenu(),
+      drawer: const SideMenu(),
       appBar: AppBar(
-        iconTheme: IconThemeData(color: style.subColor),
-        title: Text('MiniMyButterRing'),
+        iconTheme: const IconThemeData(color: Palette.subColor),
+        title: const Text('MiniMyButterRing'),
         centerTitle: true,
         actions: const [
           IconButton(
@@ -39,14 +40,14 @@ class _MyAppState extends State<MyApp> {
         ],
       ),
       body: Column(
-        children: [
+        children: const [
           Expanded(child: ImageSlider()),
           Expanded(child: Shop()),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.message),
+        child: const Icon(Icons.message),
       ),
       bottomNavigationBar: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

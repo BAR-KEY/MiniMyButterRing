@@ -19,8 +19,8 @@ class _ShopState extends State<Shop> {
         shopList = result.docs;
       }
     } catch (e) {
+      // ignore: avoid_print
       print(e);
-      print('에러남');
     }
   }
 

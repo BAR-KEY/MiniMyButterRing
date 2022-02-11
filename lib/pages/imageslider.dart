@@ -27,9 +27,9 @@ final List<String> imgList = [
 ];
 final List<Widget> imageSliders = imgList
     .map((item) => Container(
-          margin: EdgeInsets.fromLTRB(5, 40, 5, 5),
+          margin: const EdgeInsets.fromLTRB(5, 40, 5, 5),
           child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
               child: Stack(
                 children: <Widget>[
                   Image.asset(item, fit: BoxFit.cover, width: 1000.0),
@@ -38,7 +38,7 @@ final List<Widget> imageSliders = imgList
                     left: 0.0,
                     right: 0.0,
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
                             Color.fromARGB(200, 0, 0, 0),
@@ -48,11 +48,11 @@ final List<Widget> imageSliders = imgList
                           end: Alignment.topCenter,
                         ),
                       ),
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                           vertical: 10.0, horizontal: 20.0),
                       child: Text(
                         '꼬순이 착샷 ${imgList.indexOf(item) + 1}',
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,

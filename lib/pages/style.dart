@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:minimybutterring/pages/palette.dart';
 
-var mainColor = Color(0xFFFDEDCC);
-var subColor = Color(0xFF9d937e);
 var theme = ThemeData(
-    appBarTheme: AppBarTheme(
-        color: mainColor,
+    appBarTheme: const AppBarTheme(
+        color: Palette.mainColor,
         titleTextStyle: TextStyle(color: Colors.black, fontSize: 20)),
-    textTheme: TextTheme(bodyText2: TextStyle(fontFamily: "NanumBarunGothic")),
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: mainColor, foregroundColor: subColor));
+    textTheme:
+        const TextTheme(bodyText2: TextStyle(fontFamily: "NanumBarunGothic")),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: Palette.mainColor, foregroundColor: Palette.subColor));
