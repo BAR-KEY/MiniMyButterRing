@@ -81,7 +81,7 @@ class SideMenu extends StatelessWidget {
                                     ),
                                     Row(
                                       children: [
-                                        Text('아직 계정이 없으세요?'),
+                                        const Text('아직 계정이 없으세요?'),
                                         TextButton(
                                             onPressed: () {
                                               Navigator.push(context,
@@ -90,7 +90,7 @@ class SideMenu extends StatelessWidget {
                                                 return const Signin();
                                               }));
                                             },
-                                            child: Text('가입하기'))
+                                            child: const Text('가입하기'))
                                       ],
                                     ),
                                     const SizedBox(
